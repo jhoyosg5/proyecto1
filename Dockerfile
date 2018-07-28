@@ -1,19 +1,16 @@
-FROM node:8
+FROM node:9.6.1
 
-# Create app directory
-WORKDIR /usr/src/app
+LABEL version="1.0"
+LABEL description="Proyecto 1"
+LABEL maintainer="Jorge Hoyos - jhoyosg5@eafit.edu.co"
 
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-COPY package*.json ./
+ARG PORT=3000
+ENV PORT $PORT
 
-RUN npm install
-# If you are building your code for production
-# RUN npm install --only=production
+WORKDIR /nodeApp
+COPY . ./
 
-# Bundle app source
-COPY . .
+RUN npm install --test
 
-EXPOSE 8080
-CMD [ "npm", "start" ]
+EXPOSE 3000
+CMD npm start
