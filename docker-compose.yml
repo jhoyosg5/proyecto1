@@ -8,17 +8,17 @@ services:
     ports:
       - "80:80"
     depends_on:
-      - nodeapp2
-  nodeapp2:
-    container_name: nodeapp2
+      - nodeapp
+  nodeapp:
+    container_name: nodeapp
     restart: always
     build: .
     ports:
       - "3000:3000"
     depends_on:
-      - mongo-server2      
-  mongo-server2:
-    container_name: mongo-server2
+      - mongo-server     
+  mongo-server:
+    container_name: mongo-server
     image: mongo
     volumes:
       - ./data:/data/db
