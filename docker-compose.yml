@@ -8,9 +8,9 @@ services:
     ports:
       - "80:80"
     depends_on:
-      - nodeapp
-  nodeapp:
-    container_name: nodeapp
+      - nodeapp2
+  nodeapp2:
+    container_name: nodeapp2
     restart: always
     build: .
     ports:
