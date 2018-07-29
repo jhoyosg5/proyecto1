@@ -3,6 +3,7 @@ var path = require('path'),
     env = process.env.NODE_ENV || 'test';
 
 var config = {
+  //localhost
   development: {
     baseUrl: "/",
     root: rootPath,
@@ -12,7 +13,7 @@ var config = {
     port: process.env.PORT || 3000,
     db: 'mongodb://localhost/proyecto1-dev'
   },
-
+  //DCA
   test: {
     baseUrl: "/",
     root: rootPath,
@@ -22,7 +23,7 @@ var config = {
     port: process.env.PORT || 3000,
     db: 'mongodb://mongo-server/proyecto1-test'
   },
-
+  //Amazon
   production: {
     baseUrl: "/",
     root: rootPath,
